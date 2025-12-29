@@ -19,3 +19,12 @@ build/
 __pycache__/
 .venv/
 *.log
+
+# Internal documentation (not for GitHub)
+API_DOCS.md
+DELIVERY_CHECKLIST.md
+DEMO_SCRIPT.md
+DOC_INDEX.md
+PROJECT_SUMMARY.md
+QUICKSTART.md
+docs/PERFORMANCE_MONITOR_DEMO.md
