@@ -11,16 +11,9 @@ __pycache__
 .pytest_cache
 .venv
 venv
-.DS_Store
-.env
-node_modules/
-dist/
-build/
-__pycache__/
-.venv/
-*.log
 
-# Internal documentation (not for GitHub)
+# Documentation files (local only)
+PERFORMANCE_MONITOR_DEMO.md
 API_DOCS.md
 DELIVERY_CHECKLIST.md
 DEMO_SCRIPT.md
@@ -28,3 +21,9 @@ DOC_INDEX.md
 PROJECT_SUMMARY.md
 QUICKSTART.md
 docs/PERFORMANCE_MONITOR_DEMO.md
+docs/API_DOCS.md
+docs/DELIVERY_CHECKLIST.md
+docs/DEMO_SCRIPT.md
+docs/DOC_INDEX.md
+docs/PROJECT_SUMMARY.md
+docs/QUICKSTART.md
