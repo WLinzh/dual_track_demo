@@ -1,0 +1,16 @@
+{
+  "name": "dual-track-demo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"pnpm dev:api\" \"pnpm dev:public\" \"pnpm dev:clinician\"",
+    "dev:api": "pnpm --filter api dev",
+    "dev:public": "pnpm --filter public-chat dev",
+    "dev:clinician": "pnpm --filter clinician-console dev",
+    "setup": "node scripts/setup.js",
+    "ollama:pull": "node scripts/pull-models.js"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

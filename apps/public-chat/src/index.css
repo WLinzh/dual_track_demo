@@ -1,0 +1,414 @@
+/* =================================================================
+   DUAL-TRACK HEALTHCARE SYSTEM - Public Track Styles
+   Design: Professional healthcare/compliance aesthetic
+   - Low saturation colors (blue-gray/black-white primary)
+   - Status colors reserved for governance banners only
+   - Workstation feel, not chat toy
+   ================================================================= */
+
+:root {
+  /* Primary palette - low saturation blue-gray */
+  --color-primary: #475569;
+  --color-primary-dark: #334155;
+  --color-primary-light: #64748b;
+  
+  /* Neutral palette */
+  --color-bg: #f8fafc;
+  --color-bg-secondary: #f1f5f9;
+  --color-surface: #ffffff;
+  --color-border: #e2e8f0;
+  --color-border-subtle: #f1f5f9;
+  
+  /* Text */
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #64748b;
+  --color-text-muted: #94a3b8;
+  
+  /* Status colors - ONLY for governance banners */
+  --color-status-safe: #059669;
+  --color-status-caution: #d97706;
+  --color-status-critical: #dc2626;
+  --color-status-info: #0369a1;
+  
+  /* Governance accent */
+  --color-governance: #0f172a;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.card {
+  background: var(--color-surface);
+  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+/* Header - Professional, muted */
+.header {
+  background: var(--color-governance);
+  color: white;
+  padding: 20px 24px;
+  border-radius: 8px 8px 0 0;
+  margin: -24px -24px 24px -24px;
+}
+
+.header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 4px;
+  letter-spacing: -0.01em;
+}
+
+.header p {
+  opacity: 0.7;
+  font-size: 13px;
+  font-weight: 400;
+}
+
+/* Chat messages - Clean, clinical */
+.chat-messages {
+  height: 360px;
+  overflow-y: auto;
+  padding: 16px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+
+.message {
+  margin-bottom: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.message-user {
+  flex-direction: row-reverse;
+}
+
+.message-bubble {
+  max-width: 70%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  word-wrap: break-word;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.message-user .message-bubble {
+  background: var(--color-primary);
+  color: white;
+  border-bottom-right-radius: 2px;
+}
+
+.message-assistant .message-bubble {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-bottom-left-radius: 2px;
+  color: var(--color-text-primary);
+}
+
+/* Alerts - Status colors only for governance */
+.alert {
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  border-left: 3px solid;
+  font-size: 13px;
+}
+
+.alert-warning {
+  background: #fffbeb;
+  border-color: var(--color-status-caution);
+  color: #92400e;
+}
+
+.alert-danger {
+  background: #fef2f2;
+  border-color: var(--color-status-critical);
+  color: #991b1b;
+}
+
+.alert-info {
+  background: #f0f9ff;
+  border-color: var(--color-status-info);
+  color: #0c4a6e;
+}
+
+.alert-success {
+  background: #f0fdf4;
+  border-color: var(--color-status-safe);
+  color: #065f46;
+}
+
+/* Governance banner - Full status styling */
+.governance-banner {
+  background: var(--color-governance);
+  color: white;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.governance-banner.critical {
+  background: var(--color-status-critical);
+}
+
+.governance-banner.caution {
+  background: var(--color-status-caution);
+}
+
+/* Audit link */
+.audit-link {
+  font-size: 11px;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  transition: all 0.15s;
+}
+
+.audit-link:hover {
+  background: var(--color-border);
+  color: var(--color-text-primary);
+}
+
+.audit-link-inline {
+  font-size: 11px;
+  color: var(--color-primary-light);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.audit-link-inline:hover {
+  color: var(--color-primary);
+}
+
+/* Inputs */
+.input-group {
+  display: flex;
+  gap: 8px;
+}
+
+.input {
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  font-size: 14px;
+  outline: none;
+  background: var(--color-surface);
+  color: var(--color-text-primary);
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 2px rgba(71, 85, 105, 0.1);
+}
+
+.input::placeholder {
+  color: var(--color-text-muted);
+}
+
+/* Buttons - Muted, professional */
+.button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  letter-spacing: 0.01em;
+}
+
+.button-primary {
+  background: var(--color-primary);
+  color: white;
+}
+
+.button-primary:hover:not(:disabled) {
+  background: var(--color-primary-dark);
+}
+
+.button-secondary {
+  background: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border);
+}
+
+.button-secondary:hover:not(:disabled) {
+  background: var(--color-border);
+}
+
+.button-success {
+  background: var(--color-status-safe);
+  color: white;
+}
+
+.button-success:hover:not(:disabled) {
+  background: #047857;
+}
+
+.button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Badges - Minimal */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.badge-low {
+  background: #f0fdf4;
+  color: var(--color-status-safe);
+}
+
+.badge-medium {
+  background: #fffbeb;
+  color: var(--color-status-caution);
+}
+
+.badge-high {
+  background: #fef2f2;
+  color: var(--color-status-critical);
+}
+
+.badge-critical {
+  background: var(--color-status-critical);
+  color: white;
+}
+
+.divider {
+  height: 1px;
+  background: var(--color-border);
+  margin: 20px 0;
+}
+
+/* Checkbox - Clean */
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  transition: all 0.15s;
+}
+
+.checkbox-label:hover {
+  background: var(--color-bg-secondary);
+}
+
+.checkbox {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+/* Structured data display */
+.structured-data {
+  background: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  padding: 14px;
+  font-family: 'SF Mono', 'Consolas', monospace;
+  font-size: 12px;
+  margin-top: 12px;
+  color: var(--color-text-secondary);
+  overflow-x: auto;
+}
+
+.field-group {
+  margin-bottom: 16px;
+}
+
+.field-label {
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin-bottom: 4px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.field-value {
+  color: var(--color-text-primary);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--color-text-muted);
+}
+
+.spinner {
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  animation: spin 0.8s linear infinite;
+  margin: 0 auto 16px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Receipt/Audit footer */
+.audit-footer {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-border);
+  font-size: 11px;
+  color: var(--color-text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.audit-id {
+  font-family: 'SF Mono', monospace;
+  background: var(--color-bg-secondary);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
